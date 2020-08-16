@@ -20,12 +20,13 @@ function addNewPage() {
 }
 
 function scrollToTop() {
-  const scroller = document.querySelector('#notion-app')
+  const scroller = document
+    .querySelector("#notion-app")
     .querySelector(".notion-frame")
     .querySelector(".notion-scroller");
   if (scroller == null) {
     console.debug("Cannot find scroller");
     return;
   }
-  scroller.scroll({top: 0, left:0, behavior: "smooth"})
+  scroller.scroll({ top: 0, left: 0, behavior: "smooth" });
 }
