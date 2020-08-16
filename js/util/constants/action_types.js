@@ -1,0 +1,1 @@
+const TYPE_ADD_NEW_PAGE = "Add New Page"

@@ -1,7 +1,7 @@
 {
     "name": "Notion Extensions",
     "description": "Extended Behaviors for Notion",
-    "version": "0.0.1",
+    "version": "0.1.0",
     "manifest_version": 2,
     "icons": {
         "16": "images/get_started16.png",
@@ -9,5 +9,23 @@
         "48": "images/get_started48.png",
         "128": "images/get_started128.png"
     },
-    "permissions": []
+    "permissions": [],
+    "content_scripts": [
+        {
+            "matches": ["https://www.notion.so/*"],
+            "js": [
+                "js/lib/jquery-3.4.1.min.js",
+                "js/util/constants/action_types.js",
+                "js/content.js"
+            ]
+        }
+    ],
+    "background": {
+        "scripts": [
+            "js/util/constants/action_types.js",
+            "js/chrome/tabs/sendMessageToActiveTab.js",
+            "js/background.js"
+        ],
+        "persistent": false
+    }
 }
