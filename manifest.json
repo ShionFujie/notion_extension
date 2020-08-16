@@ -14,12 +14,17 @@
         {
             "matches": ["https://www.notion.so/*"],
             "js": [
+                "js/util/constants/action_types.js",
                 "js/content.js"
             ]
         }
     ],
     "background": {
-        "scripts": ["js/background.js"],
+        "scripts": [
+            "js/util/constants/action_types.js",
+            "js/chrome/tabs/sendMessageToActiveTab.js",
+            "js/background.js"
+        ],
         "persistent": false
     }
 }
