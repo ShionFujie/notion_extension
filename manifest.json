@@ -14,6 +14,7 @@
         {
             "matches": ["https://www.notion.so/*"],
             "js": [
+                "js/lib/jquery-3.4.1.min.js",
                 "js/util/constants/action_types.js",
                 "js/content.js"
             ]
