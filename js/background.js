@@ -19,10 +19,17 @@ const actionSpec = {
   actions: {
     [TYPE_ADD_NEW_PAGE]: {
       f: requestAddNewPage
+    },
+    [TYPE_SCROLL_TO_TOP]: {
+      f: requestScrollToTop
     }
   }
 };
 
 function requestAddNewPage() {
-    sendMessageToActiveTab({type: TYPE_ADD_NEW_PAGE})
+  sendMessageToActiveTab({ type: TYPE_ADD_NEW_PAGE });
+}
+
+function requestScrollToTop() {
+  sendMessageToActiveTab({ type: TYPE_SCROLL_TO_TOP });
 }
