@@ -10,7 +10,7 @@ chrome.runtime.onMessage.addListener(({ type }) => {
 });
 
 function addNewPage() {
-  $("div:contains('New page')").click()
+  $("div[role='button']:has(div:contains('New page'))").click()
 }
 
 function scrollToTop() {
