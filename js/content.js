@@ -13,22 +13,18 @@ chrome.runtime.onMessage.addListener(({ type }) => {
 });
 
 function addNewPage() {
-  $("div[role='button']:has(div:contains('New page'))").click()
+  $("div[role='button']:has(div:contains('New page'))").click();
 }
 
 function scrollToTop() {
-  const scroller = document
-    .querySelector("#notion-app")
-    .querySelector(".notion-frame")
-    .querySelector(".notion-scroller");
-  if (scroller == null) {
-    console.debug("Cannot find scroller");
-    return;
-  }
-  scroller.scroll({ top: 0, left: 0, behavior: "smooth" });
+  scrollVerticallyTo(0)
 }
 
 function scrollToBottom() {
+  scrollVerticallyTo(-1)
+}
+
+function scrollVerticallyTo(top_) {
   const scroller = document
     .querySelector("#notion-app")
     .querySelector(".notion-frame")
@@ -37,6 +33,6 @@ function scrollToBottom() {
     console.debug("Cannot find scroller");
     return;
   }
-  console.debug(scroller.scrollHeight)
-  scroller.scroll({ top: scroller.scrollHeight, left: 0, behavior: "smooth" });
+  const top = top_ < 0 ? scroller.scrollHeight : top_
+  scroller.scroll({ top, left: 0, behavior: "smooth" });
 }
