@@ -22,6 +22,9 @@ const actionSpec = {
     },
     [TYPE_SCROLL_TO_TOP]: {
       f: requestScrollToTop
+    },
+    [TYPE_SCROLL_TO_BOTTOM]: {
+      f: requestScrollToBottom
     }
   }
 };
@@ -33,3 +36,5 @@ function requestAddNewPage() {
 function requestScrollToTop() {
   sendMessageToActiveTab({ type: TYPE_SCROLL_TO_TOP });
 }
+
+function requestScrollToBottom() { }
