@@ -37,4 +37,6 @@ function requestScrollToTop() {
   sendMessageToActiveTab({ type: TYPE_SCROLL_TO_TOP });
 }
 
-function requestScrollToBottom() { }
+function requestScrollToBottom() { 
+  sendMessageToActiveTab({ type: TYPE_SCROLL_TO_BOTTOM });
+}
