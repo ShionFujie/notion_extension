@@ -28,4 +28,15 @@ function scrollToTop() {
   scroller.scroll({ top: 0, left: 0, behavior: "smooth" });
 }
 
-function scrollToBottom() { }
+function scrollToBottom() {
+  const scroller = document
+    .querySelector("#notion-app")
+    .querySelector(".notion-frame")
+    .querySelector(".notion-scroller");
+  if (scroller == null) {
+    console.debug("Cannot find scroller");
+    return;
+  }
+  console.debug(scroller.scrollHeight)
+  scroller.scroll({ top: scroller.scrollHeight, left: 0, behavior: "smooth" });
+}
