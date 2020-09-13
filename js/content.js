@@ -6,6 +6,9 @@ chrome.runtime.onMessage.addListener(({ type }) => {
     case TYPE_SCROLL_TO_TOP:
       scrollToTop();
       break;
+    case TYPE_SCROLL_TO_BOTTOM:
+      scrollToBottom();
+      break;
   }
 });
 
@@ -24,3 +27,5 @@ function scrollToTop() {
   }
   scroller.scroll({ top: 0, left: 0, behavior: "smooth" });
 }
+
+function scrollToBottom() { }
